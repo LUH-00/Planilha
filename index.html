@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilha de Clientes</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estyle/estilo.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Planilha de Clientes</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="clientesTable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Status de Acesso</th>
+                        <th>ID</th>
+                        <th>Clientes</th>
+                        <th>Dia Fixo do Vencimento</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Linhas da tabela serão adicionadas aqui -->
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <label for="statusAcesso">Status de Acesso:</label>
+            <textarea class="form-control" id="statusAcesso" rows="5" placeholder="Digite os status de acesso, um por linha"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="ids">ID:</label>
+            <textarea class="form-control" id="ids" rows="5" placeholder="Digite os IDs, um por linha"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="clientes">Clientes:</label>
+            <textarea class="form-control" id="clientes" rows="5" placeholder="Digite os nomes dos clientes, um por linha"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="diasVencimento">Dia Fixo do Vencimento:</label>
+            <textarea class="form-control" id="diasVencimento" rows="5" placeholder="Digite os dias de vencimento, um por linha"></textarea>
+        </div>
+        <button class="btn btn-success" onclick="adicionarMultiplasLinhas()">Adicionar Linhas</button>
+        <div class="form-group mt-5">
+            <label for="filtroClientes">Filtrar Clientes:</label>
+            <textarea class="form-control" id="filtroClientes" rows="5" placeholder="Digite os nomes dos clientes, um por linha"></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="filtrarClientes()">Filtrar</button>
+        
+        <h2 class="text-center mt-5">Clientes Filtrados</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="clientesFiltradosTable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Status de Acesso</th>
+                        <th>ID</th>
+                        <th>Clientes</th>
+                        <th>Dia Fixo do Vencimento</th>
+                    </tr>
+                </thead>
+                <tbody id="filteredTableBody">
+                    <!-- Linhas da tabela filtrada serão adicionadas aqui -->
+                </tbody>
+            </table>
+        </div>
+        <div id="mensagem" class="mt-3"></div>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
