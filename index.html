@@ -12,7 +12,7 @@
         <h2 class="text-center">Planilha de Clientes</h2>
         <div class="table-responsive">
             <table class="table table-bordered" id="clientesTable">
-                <thead class="thead-dark">
+                <thead   class="thead-dark">
                     <tr>
                         <th>Status de Acesso</th>
                         <th>ID</th>
@@ -59,9 +59,13 @@
                         <th>Dia Fixo do Vencimento</th>
                     </tr>
                 </thead>
+                <!-- Adicione este botão acima da tabela de clientes filtrados -->
+                <button class="btn btn-primary mb-3" onclick="copiarTabelaFiltradaParaClipboard()">Copiar Tabela</button>
+
                 <tbody id="filteredTableBody">
                     <!-- Linhas da tabela filtrada serão adicionadas aqui -->
                 </tbody>
+                
             </table>
         </div>
         <div id="mensagem" class="mt-3"></div>
