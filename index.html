@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planilha de Clientes</title>
+    <title>PLANILHA BASE</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7vX7QK6eiEYAWyQG9xPK_MAPeOOIIilwog&s" type="image/x-icon">
     <link rel="stylesheet" href="estyle/estilo.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2 class="text-center">Planilha de Clientes</h2>
+    <button class="btn btn-info fixed-top-button" onclick="scrollToSection('clientesAdicionados')">Planilha Clientes</button>
+    <button class="btn btn-warning fixed-bottom-button" onclick="scrollToSection('clientesFiltrados')">Clientes Filtrados</button>
+
+    <div class="container mt-5" id="clientesAdicionados">
+        <h2 class="text-center cortexto">Planilha de Clientes</h2>
         <div class="table-responsive">
             <table class="table table-bordered" id="clientesTable">
-                <thead   class="thead-dark">
+                <thead class="thead-dark">
                     <tr>
+                        <th>Nº</th>
                         <th>Status de Acesso</th>
                         <th>ID</th>
                         <th>Clientes</th>
@@ -46,31 +51,44 @@
             <label for="filtroClientes">Filtrar Clientes:</label>
             <textarea class="form-control" id="filtroClientes" rows="5" placeholder="Digite os nomes dos clientes, um por linha"></textarea>
         </div>
-        <button class="btn btn-primary" onclick="filtrarClientes()">Filtrar</button>
-        
-        <h2 class="text-center mt-5">Clientes Filtrados</h2>
+        <button class="btn btn-primary" onclick="filtrarClientes()">Filtrar Clientes</button>
+    </div>
+
+    <div class="container mt-5" id="clientesFiltrados">
+        <h2 class="text-center mt-5 cortexto">Clientes Filtrados</h2>
         <div class="table-responsive">
             <table class="table table-bordered" id="clientesFiltradosTable">
-                <thead class="thead-dark">
-                    <tr>
+                <thead class="thead-dark ">
+                    <tr clas>
+                        <th>Nº</th>
                         <th>Status de Acesso</th>
                         <th>ID</th>
                         <th>Clientes</th>
                         <th>Dia Fixo do Vencimento</th>
                     </tr>
                 </thead>
-                <!-- Adicione este botão acima da tabela de clientes filtrados -->
-                <button class="btn btn-primary mb-3" onclick="copiarTabelaFiltradaParaClipboard()">Copiar Tabela</button>
-
                 <tbody id="filteredTableBody">
                     <!-- Linhas da tabela filtrada serão adicionadas aqui -->
                 </tbody>
-                
             </table>
         </div>
+        <button class="btn btn-primary mb-3" onclick="copiarTabelaFiltradaParaClipboard()">Copiar Tabela</button>
+        <button class="btn btn-success mb-3 fixed-top-right-button" onclick="irParaWhatsApp()">DESENVOLVEDOR</button>
         <div id="mensagem" class="mt-3"></div>
+        <div id="mensagemClientesNaoEncontrados" class="mt-3"></div>
     </div>
 
     <script src="script/script.js"></script>
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function irParaWhatsApp() {
+            const numeroWhatsApp = '+5598999707891'; // Substitua pelo número de WhatsApp da empresa
+            const url = `https://api.whatsapp.com/send/?phone=98999707891&text&type=phone_number&app_absent=0`;
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>

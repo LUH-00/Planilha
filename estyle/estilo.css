@@ -1,7 +1,54 @@
 body {
-    background-color: #f8f9fa;
-  }
-  .table-responsive {
-    margin-top: 20px;
-  }
-  
+  background-color: #f8f9fa;
+}
+.table-responsive {
+  margin-top: 20px;
+}
+
+
+/* -----------------botão----------------------------- */
+.fixed-top-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.fixed-top-right-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.fixed-bottom-button {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+/* ----------------------- plano de fundo ------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://img.freepik.com/fotos-gratis/fundo-texturizado-abstrato_1258-30473.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+
+/* ------------------cor do texto-------------------- */
+body, button, th, td {
+  color: white !important;
+}
